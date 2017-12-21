@@ -503,7 +503,7 @@ export default {
         }
         return
       }
-      let headers = new Headers({ 'Access-Control-Allow-Origin': '*'})
+      let headers = new Headers()
       headers.append('Accept', 'image/*')
       fetch(source, {
         method: 'GET',
