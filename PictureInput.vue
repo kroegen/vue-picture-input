@@ -486,6 +486,8 @@ export default {
             this.lastModifiedDate = new Date()
             this.lastModified =+ this.lastModifiedDate
             this.name = filename
+            this.type = opts.type
+            this.size = opts.size
           }
         }
       }
@@ -515,7 +517,7 @@ export default {
         const fileName = options.fileName || source.split('/').slice(-1)[0]
         let mediaType = options.mediaType || ('image/' + (options.fileType || fileName.split('.').slice(-1)[0]))
         mediaType = mediaType.replace('jpg', 'jpeg')
-        e.target.files[0] = new File([imageBlob], fileName, { type: mediaType })
+        e.target.files[0] = new File([imageBlob], fileName, { type: mediaType, size: imageBlob.size })
         this.onFileChange(e, true)
       })
       .catch(err => {
