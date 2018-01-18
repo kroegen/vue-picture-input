@@ -25,9 +25,27 @@
         </div>
       </div>
       <div class="preview-buttons">
-        <button v-if="imageSelected && !hideChangeButton" @click.prevent="selectImage" :class="buttonClass">{{ strings.change }}</button>
-        <button v-if="imageSelected && removable" @click.prevent="removeImage" :class="removeButtonClass">{{ strings.remove }}</button>
-        <button v-if="imageSelected && toggleAspectRatio && width !== height" @click.prevent="rotateImage" :class="aspectButtonClass">{{ strings.aspect }}</button>
+        <button
+          v-if="imageSelected && !hideChangeButton"
+          @click.prevent="selectImage"
+          :class="buttonClass"
+        >
+          <span>{{ strings.change }}</span>
+        </button>
+        <button
+          v-if="imageSelected && removable"
+          @click.prevent="removeImage"
+          :class="removeButtonClass"
+        >
+          <span>{{ strings.remove }}</span>
+        </button>
+        <button
+          v-if="imageSelected && toggleAspectRatio && width !== height"
+          @click.prevent="rotateImage"
+          :class="aspectButtonClass"
+        >
+          <span>{{ strings.aspect }}</span>
+        </button>
       </div>
     </div>
     <div v-else>
